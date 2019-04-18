@@ -33,12 +33,16 @@ export default Component.extend({
   min: 0,
   max: 100,
 
-  range: computed('min', 'max', function() {
-    return {
+  rangeObserver: observer('min', 'max', function() {
+    this.set("range",{
       min: this.get('min'),
-      max: this.get('max')
-    };
+      max: this.get('max'),
+    });
   }),
+  range: {
+    min: 0,
+    max: 100
+  }
 
   formatTo(value) {
     return value;
