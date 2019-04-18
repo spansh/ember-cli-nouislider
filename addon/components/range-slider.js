@@ -1,10 +1,9 @@
 /* eslint ember/closure-actions: 0 */
-
 import { A } from '@ember/array';
 import Component from '@ember/component';
 import { run } from '@ember/runloop';
 import { isEmpty } from '@ember/utils';
-import { computed } from '@ember/object';
+import { observer, computed } from '@ember/object';
 import Ember from 'ember';
 import noUiSlider from 'noUiSlider';
 
