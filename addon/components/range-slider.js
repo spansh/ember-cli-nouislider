@@ -42,7 +42,7 @@ export default Component.extend({
   range: {
     min: 0,
     max: 100
-  }
+  },
 
   formatTo(value) {
     return value;
