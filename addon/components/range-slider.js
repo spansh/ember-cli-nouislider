@@ -38,10 +38,7 @@ export default Component.extend({
       max: this.get('max'),
     });
   }),
-  range: {
-    min: 0,
-    max: 100
-  },
+  range: null,
 
   formatTo(value) {
     return value;
@@ -65,6 +62,12 @@ export default Component.extend({
   setup() {
     let element = this.get('element');
     let { noUiSlider: slider } = element;
+    if (this.range == null) {
+        this.set("range",{
+            min: this.get("min"),
+            max: this.get("max")
+        });
+    }
     let properties = this.getProperties(
       'start', 'step', 'margin',
       'limit', 'range', 'connect',
